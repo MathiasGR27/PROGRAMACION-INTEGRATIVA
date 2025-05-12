@@ -56,5 +56,6 @@ class ComponenteMG extends HTMLElement {
   }
   
   customElements.define('componente-mg', ComponenteMG);
+
   
   
