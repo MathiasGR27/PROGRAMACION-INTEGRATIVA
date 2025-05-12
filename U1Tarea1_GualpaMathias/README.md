@@ -16,3 +16,27 @@ Mediante el html tenemos este codigo para el uso de la tarjeta
         Tengo 21 años y estudio en la Universidad de las fuerzas
         Armadas ESPE sede Santo Domingo.</p>
     </componente-mg>
+
+# formulario-mg
+
+# Objetivo
+Integrar dos componentes personalizados usando Web Components, Shadow DOM, atributos, y slots.
+
+# Componentes
+1. `<componente-mg>`: Primero creamos nuestra tarjeta de presentacion la cual despues se va a poder modificar con el formulario-mg.
+
+2. `<formulario-mg>`: Se creo un formulario el cual nos permite modificar nuestra tarjeta que se creo con el componente-mg.
+
+#  Uso
+```html
+<componente-mg tema="#d6eaf8">
+  <img slot="foto" src="perfil.png" />
+  <span slot="nombre">Nombre</span>
+  <p slot="descripcion">Descripción</p>
+</componente-mg>
+
+<formulario-contacto>
+  <button slot="boton-enviar">Actualizar</button>
+</formulario-contacto>
+
+
