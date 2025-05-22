@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Card Test</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <nav>
+        <span>Mi Tienda</span>
+        <button id="cart-button">Carrito (0)</button>
+    </nav>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Mi Carrito</h2>
+            <ul id="cart-items-list"></ul>
+        </div>
+    </div>
+
+    <product-card img="./img/vans.png" title="Zapato Vans" description="Zapato Vans talla 40 " price="$182"
+        colletion="Kids Fashion"></product-card>
+
+    <script type="module" src="./product-card.js"></script>
+
+    <script>
+        const cartButton = document.getElementById("cart-button");
+        const cartItemsList = document.getElementById("cart-items-list");
+        const modal = document.getElementById("cart-modal");
+        const closeButton = document.querySelector(".close-button");
+
+        const cart = [];
+
+        function updateCartUI() {
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartButton.textContent = `Carrito (${totalQuantity})`;
+        }
+
+        document.body.addEventListener("add-to-cart", (e) => {
+            const product = e.detail;
+
+            const existing = cart.find(p => p.title === product.title);
+            if (existing) {
+                existing.quantity += product.quantity;
+            } else {
+                cart.push(product);
+            }
+
+            updateCartUI();
+        });
+
+
+        cartButton.addEventListener("click", () => {
+            cartItemsList.innerHTML = "";
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                const priceNum = parseFloat(item.price.replace("$", ""));
+                const subtotal = priceNum * item.quantity;
+                li.textContent = `${item.title} - ${item.quantity} x ${item.price} = $${subtotal.toFixed(2)}`;
+                cartItemsList.appendChild(li);
+            });
+            modal.style.display = "block";
+        });
+
+        closeButton.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
