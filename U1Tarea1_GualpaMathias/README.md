@@ -44,9 +44,11 @@ Comunicación directa entre componentes usando JavaScript.
 
 ## Ejemplo de uso explicado
 
+Mediante un formulario en donde pide el nuevo nombre o otro color para la tarjeta lo que hacemos es que con el boton de 
 <formulario-mg>
   <button slot="boton-enviar">Actualizar tarjeta</button>
 </formulario-mg>
+Lo que hace es que en ese momento actualiza el componente-mg con los datos que se ingreso en el formulario
 
 ## ¿Qué hace este componente?
 
@@ -71,10 +73,13 @@ Emisión del evento personalizado modal-cerrado al cerrarse.
 
 ## Ejemplo de uso explicado
 
+Aqui lo que se hizo es agregar un ES MODULES para modularizar componentes y asi se creo un componente avanzado el cual 
+mediante un boton se nos abre un modal eel cual nos muestra lo siguiente: 
 <espe-modal id="modalAvanzado">
   <span slot="titulo">Información Adicional</span>
   <p slot="contenido">Me gusta mucho jugar fútbol y también programar.</p>
 </espe-modal>
+y al momento de abrir el modal hay un evente personalizado el cual nos muestra un mensaje de tipo alerta que sale cuando se abre o se cierra el modal
 
 <button class="boton-abrir" onclick="document.getElementById('modalAvanzado').open()">Abrir Información</button>
 
