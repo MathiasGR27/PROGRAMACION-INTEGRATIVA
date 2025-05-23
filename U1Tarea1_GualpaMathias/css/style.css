@@ -1,0 +1,25 @@
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .contenedor {
+      display: flex;
+      gap: 40px; 
+      align-items: flex-start;
+    }
+
+    .boton-abrir {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2e86c1;
+      color: white;
+    }
+
+
+    

@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U1Tarea1_GualpaMathias</title>
-    <style>
-        body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-          background-color: #ffffff;
-        }
-      </style>
+    <title>U1 Tarea 1 y 2 _GualpaMathias</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <componente-mg tema="#d6eaf8">
-      <img slot="foto" src="perfil/perfil.png" alt="Foto de perfil">
-      <span slot="nombre">Mathias Elian Gualpa Rivera</span>
-      <p slot="descripcion">Esta es mi tarjeta de presentacion 
-        Tengo 21 años y estudio en la Universidad de las fuerzas
-        Armadas ESPE sede Santo Domingo.</p>
-    </componente-mg>
+<div class="contenedor">
+  <componente-mg tema="#d6eaf8">
+    <img slot="foto" src="perfil/perfil.png" alt="Foto de perfil" />
+    <span slot="nombre">Mathias Elian Gualpa Rivera</span>
+    <p slot="descripcion">Esta es mi tarjeta de presentación. Tengo 21 años y estudio en la Universidad de las Fuerzas Armadas ESPE, sede Santo Domingo.</p>
+  </componente-mg>
+
+  <formulario-mg>
+    <button slot="boton-enviar">Actualizar tarjeta</button>
+  </formulario-mg>
+
+  <button class="boton-abrir" onclick="document.getElementById('modalAvanzado').open()">Abrir Información</button>
+
+  <espe-modal id="modalAvanzado">
+    <span slot="titulo">Información Adicional</span>
+    <p slot="contenido">Como Información adicional puedo decir que me gusta mucho jugar futbol y tambien programar.</p>
+  </espe-modal>
+
+</div>
   
-    <script src="componente-mg.js"></script>
-  </body>
+  <script src="componente-mg.js"></script>
+  <script src="formulario-mg.js"></script>
+  <script type="module" src="espe-modal.js"></script>
+  <script type="module">
+    const modal = document.getElementById('modalAvanzado');
+    modal.addEventListener('mi-evento-mg', (e) => {
+    console.log('Evento personalizado recibido:', e.detail.mensaje);
+    alert(e.detail.mensaje); 
+  });
+  </script>
+
+</body>
 </html>
+
