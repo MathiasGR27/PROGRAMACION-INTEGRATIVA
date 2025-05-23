@@ -28,7 +28,7 @@ Mostrar una tarjeta de presentación con diseño personalizado, utilizando Shado
   </p>
 </componente-mg>
 
-## Componente 2: <formulario-mg>
+## Componente 2: `<formulario-mg>`
 
 ## Objetivo
 Permitir la modificación dinámica del contenido del componente <componente-mg> a través de un formulario. Facilita la interacción entre componentes personalizados mediante el DOM.
@@ -55,7 +55,7 @@ El formulario incluye campos de entrada para imagen, nombre y descripción.
 Cuando el usuario llena los campos y hace clic en el botón “Actualizar tarjeta”, el componente busca el primer <componente-mg> en la página y actualiza dinámicamente sus slots (foto, nombre, descripcion) con los nuevos valores.
 
 
-## Componente 3: <espe-modal>
+## Componente 3: `<espe-modal>`
 
 ## Objetivo
 Mostrar un modal emergente reutilizable que despliega información adicional. Se puede controlar externamente con métodos y comunica eventos personalizados.
