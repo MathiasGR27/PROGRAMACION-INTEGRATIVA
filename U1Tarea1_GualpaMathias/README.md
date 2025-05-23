@@ -52,9 +52,9 @@ Lo que hace es que en ese momento actualiza el componente-mg con los datos que s
 
 ## ¿Qué hace este componente?
 
-El formulario incluye campos de entrada para imagen, nombre y descripción.
+El formulario incluye campos de entrada para  nombre y color de la tarjeta
 
-Cuando el usuario llena los campos y hace clic en el botón “Actualizar tarjeta”, el componente busca el primer <componente-mg> en la página y actualiza dinámicamente sus slots (foto, nombre, descripcion) con los nuevos valores.
+Cuando el usuario llena los campos y hace clic en el botón “Actualizar tarjeta”, el componente busca el primer <componente-mg> en la página y actualiza dinámicamente sus slots con los nuevos valores.
 
 
 ## Componente 3: `<espe-modal>`
@@ -90,4 +90,4 @@ Al presionar el botón externo, se invoca el método .open() para mostrar el mod
 
 Dentro del modal hay un botón de cierre (#cerrar), que activa .close().
 
-Cuando se cierra el modal, se lanza el evento modal-cerrado, lo cual permite a otros elementos del DOM reaccionar (por ejemplo: mostrar un mensaje, ejecutar código, etc).
+Cuando se cierra el modal, se lanza el evento modal-cerrado, lo cual permite a otros elementos del DOM reaccionar
