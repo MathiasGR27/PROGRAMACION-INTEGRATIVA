@@ -21,9 +21,17 @@
             <ul id="cart-items-list"></ul>
         </div>
     </div>
+    
+    <template id="product-card-template">
+        <div class="card">
+            <slot name="image"></slot>
+            <slot name="title"></slot>
+            <slot name="price"></slot>
+        </div>
+    </template>
 
-    <product-card img="./img/vans.png" title="Zapato Vans" description="Zapato Vans talla 40 " price="$182"
-        colletion="Kids Fashion"></product-card>
+    <product-card img="./img/vans.png" title="Zapato Vans" description="Zapato Vans talla 40"
+        price="$182" colletion="Kids Fashion"></product-card>
 
     <script type="module" src="./product-card.js"></script>
 
@@ -52,7 +60,6 @@
 
             updateCartUI();
         });
-
 
         cartButton.addEventListener("click", () => {
             cartItemsList.innerHTML = "";
